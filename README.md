@@ -8,13 +8,14 @@ A feature-rich To-Do application built with React, Redux, and integrated with a 
 - **Authentication:** Mock login/logout system with persistence using Redux and localStorage.
 - **Responsive Design:** Fully responsive across mobile, tablet, and desktop devices using CSS Flexbox.
 - **State Management:** Utilizes Redux with Thunk for asynchronous API calls.
-
-## Screenshots
-![Login Screen](screenshotss/login.png)
-![Task List](screenshotss/taskk-list.png)
-![Mobile View](screenshotss/mobileview.png)
+ 
+##screenshots
+ ## Screenshots
+![Login Screen](screenshorts/login.png)
+![Task List](screenshorts/taskk-list.png)
+![Mobile View](screenshorts/mobileview.jpg)
 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sufiyafreen2012/reactt-todo-app.git
+  https://github.com/sufiyaafreen2012/reactt-todo-app
