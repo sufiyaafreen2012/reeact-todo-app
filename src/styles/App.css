@@ -1,0 +1,649 @@
+/* Root container with a gradient background and subtle pattern */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5),
+              url('https://www.transparenttextures.com/patterns/white-diamond.png');
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container with a card-like appearance */
+.container {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  min-height: 500px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title styling */
+h1 {
+  color: #ff4040; /* Bright red color */
+  font-weight: 700;
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for contrast */
+  margin-bottom: 30px;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control {
+  flex: 1 1 100%;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #74ebd5;
+  outline: none;
+  box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
+}
+
+.form-select {
+  flex: 1 1 100%;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  border: 2px solid #dfe6e9;
+  transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: #acb6e5;
+  outline: none;
+  box-shadow: 0 0 5px rgba(172, 182, 229, 0.5);
+}
+
+/* Button styling adjustments */
+button.btn-success,
+button.btn-danger,
+button.btn-primary {
+  max-width: 150px;
+  width: auto;
+  padding: 12px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Add button styling */
+button.btn-primary {
+  background: #74ebd5;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+button.btn-primary:hover {
+  background: #66d9c8;
+  transform: translateY(-2px);
+}
+
+/* Logout button styling */
+button.btn-danger {
+  background: #ff6b6b;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+button.btn-danger:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+}
+
+/* Login screen styling */
+.btn-success {
+  background: #55efc4;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.btn-success:hover {
+  background: #48d4ab;
+  transform: translateY(-2px);
+}
+
+/* Task list styling */
+.list-group {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensure vertical centering */
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure task text and checkbox are aligned */
+.list-group-item .d-flex {
+  flex: 1;
+  align-items: center; /* Vertically center the content */
+  min-height: 40px;
+  display: flex; /* Ensure flex context for buttons */
+}
+
+/* Task text styling */
+.list-group-item span {
+  color: #333;
+  font-size: 16px;
+  flex: 1;
+  word-break: break-word;
+  line-height: 1.5;
+  vertical-align: middle; /* Additional alignment */
+}
+
+/* Button container for Edit and Delete */
+.list-group-item .button-group {
+  display: flex;
+  align-items: center; /* Vertically center buttons */
+  gap: 5px; /* Spacing between buttons */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Completed task styling */
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Priority color coding */
+.priority-high::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 8px;
+  background: #ff6b6b;
+}
+
+.priority-medium::after {
+  background: #feca57;
+}
+
+.priority-low::after {
+  background: #54a0ff;
+}
+
+/* Edit button styling */
+button.btn-primary.btn-sm.edit-btn {
+  background: #74ebd5;
+  border: none;
+  padding: 5px 10px; /* Standardized padding */
+  width: 60px; /* Fixed width */
+  height: 30px; /* Fixed height */
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  align-self: center; /* Vertically center the button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle; /* Additional alignment */
+}
+
+button.btn-primary.btn-sm.edit-btn:hover {
+  background: #66d9c8;
+}
+
+/* Delete button styling */
+button.btn-danger.btn-sm {
+  background: #ff8787;
+  border: none;
+  padding: 5px 10px; /* Standardized padding */
+  width: 60px; /* Fixed width to match Edit */
+  height: 30px; /* Fixed height */
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  align-self: center; /* Vertically center the button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle; /* Additional alignment */
+}
+
+button.btn-danger.btn-sm:hover {
+  background: #ff6b6b;
+}
+
+/* Tablet and Desktop responsiveness */
+@media (min-width: 576px) {
+  .form-control {
+    flex: 1 1 60%;
+  }
+
+  .form-select {
+    flex: 1 1 20%;
+  }
+
+  button.btn-primary,
+  button.btn-success,
+  button.btn-danger {
+    flex: 0 0 auto;
+    max-width: 150px;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+  .container {
+    max-width: 90%;
+    min-height: 400px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button.btn-primary,
+  button.btn-success,
+  button.btn-danger {
+    max-width: 140px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .list-group-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button.btn-primary.btn-sm.edit-btn,
+  button.btn-danger.btn-sm {
+    padding: 4px 8px;
+    width: 50px; /* Adjusted width for mobile */
+    height: 25px; /* Adjusted height for mobile */
+    font-size: 12px;
+  }
+
+  .priority-high::after,
+  .priority-medium::after,
+  .priority-low::after {
+    width: 12px;
+    height: 12px;
+  }
+
+  .list-group-item span {
+    color: #444;
+  }
+
+  .text-muted {
+    color: #555 !important;
+  }
+}/* Root container with a gradient background and subtle pattern */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5),
+              url('https://www.transparenttextures.com/patterns/white-diamond.png');
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container with a card-like appearance */
+.container {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  min-height: 500px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title styling */
+h1 {
+  color: #ff4040; /* Bright red color */
+  font-weight: 700;
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for contrast */
+  margin-bottom: 30px;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control {
+  flex: 1 1 100%;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #74ebd5;
+  outline: none;
+  box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
+}
+
+.form-select {
+  flex: 1 1 100%;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  border: 2px solid #dfe6e9;
+  transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: #acb6e5;
+  outline: none;
+  box-shadow: 0 0 5px rgba(172, 182, 229, 0.5);
+}
+
+/* Button styling adjustments */
+button.btn-success,
+button.btn-danger,
+button.btn-primary {
+  max-width: 150px;
+  width: auto;
+  padding: 12px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Add button styling */
+button.btn-primary {
+  background: #74ebd5;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+button.btn-primary:hover {
+  background: #66d9c8;
+  transform: translateY(-2px);
+}
+
+/* Logout button styling */
+button.btn-danger {
+  background: #ff6b6b;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+button.btn-danger:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+}
+
+/* Login screen styling */
+.btn-success {
+  background: #55efc4;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.btn-success:hover {
+  background: #48d4ab;
+  transform: translateY(-2px);
+}
+
+/* Task list styling */
+.list-group {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensure vertical centering */
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure task text and checkbox are aligned */
+.list-group-item .d-flex {
+  flex: 1;
+  align-items: center; /* Vertically center the content */
+  display: flex;
+  gap: 10px; /* Spacing between checkbox, text, and buttons */
+}
+
+/* Task text styling */
+.list-group-item span {
+  color: #333;
+  font-size: 16px;
+  flex: 1;
+  word-break: break-word;
+  line-height: 1.5;
+  vertical-align: middle; /* Additional alignment */
+}
+
+/* Button container for Edit and Delete */
+.button-group {
+  display: flex;
+  align-items: center; /* Vertically center buttons */
+  gap: 10px; /* Spacing between buttons */
+  margin-left: 10px; /* Spacing from task text */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Completed task styling */
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Priority color coding */
+.priority-high::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 8px;
+  background: #ff6b6b;
+}
+
+.priority-medium::after {
+  background: #feca57;
+}
+
+.priority-low::after {
+  background: #54a0ff;
+}
+
+/* Edit button styling */
+button.btn-primary.btn-sm.edit-btn {
+  background: #74ebd5;
+  border: none;
+  padding: 5px 10px; /* Standardized padding */
+  width: 60px; /* Fixed width */
+  height: 30px; /* Fixed height */
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* Remove any margins */
+}
+
+button.btn-primary.btn-sm.edit-btn:hover {
+  background: #66d9c8;
+}
+
+/* Delete button styling */
+button.btn-danger.btn-sm {
+  background: #ff8787;
+  border: none;
+  padding: 5px 10px; /* Standardized padding */
+  width: 60px; /* Fixed width to match Edit */
+  height: 30px; /* Fixed height */
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* Remove any margins */
+}
+
+button.btn-danger.btn-sm:hover {
+  background: #ff6b6b;
+}
+
+/* Tablet and Desktop responsiveness */
+@media (min-width: 576px) {
+  .form-control {
+    flex: 1 1 60%;
+  }
+
+  .form-select {
+    flex: 1 1 20%;
+  }
+
+  button.btn-primary,
+  button.btn-success,
+  button.btn-danger {
+    flex: 0 0 auto;
+    max-width: 150px;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+  .container {
+    max-width: 90%;
+    min-height: 400px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button.btn-primary,
+  button.btn-success,
+  button.btn-danger {
+    max-width: 140px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .list-group-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button.btn-primary.btn-sm.edit-btn,
+  button.btn-danger.btn-sm {
+    padding: 4px 8px;
+    width: 50px; /* Adjusted width for mobile */
+    height: 25px; /* Adjusted height for mobile */
+    font-size: 12px;
+  }
+}
